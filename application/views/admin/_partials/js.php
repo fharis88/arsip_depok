@@ -20,4 +20,24 @@
   <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js') ?>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url('js/demo/datatables-demo.js') ?>"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#dataTable').DataTable();
+    });
+
+    $(document).ready(function() {
+      $('#templateTable').DataTable();
+    });
+
+    $(document).ready(function() {
+      $('#kategoriTable').DataTable();
+    });
+
+    $(document).ready(function() {
+      $('#kegiatanTable').DataTable();
+    });
+
+    $(document).ready(function() {
+      $('#userTable').DataTable();
+    });
+  </script>>

@@ -56,14 +56,10 @@ $route['translate_uri_dashes'] = FALSE;
 $route['dashboard'] = 'admin/overview';
 
 
-$route['upload_data'] = 'admin/upload_data';
-$route['view_data'] = 'admin/view_data';
+$route['data'] = 'admin/data';
 
-$route['tambah_kategori'] = 'admin/tambah_kategori';
-$route['tambah_kegiatan'] = 'admin/tambah_kegiatan';
-$route['view_kegiatan'] = 'admin/view_kegiatan';
+$route['kategori_kegiatan'] = 'admin/kategori_kegiatan';
 
-$route['tambah_user'] = 'admin/tambah_user';
-$route['view_user'] = 'admin/view_user';
+$route['user'] = 'admin/user';
 
 $route['template'] = 'admin/template';

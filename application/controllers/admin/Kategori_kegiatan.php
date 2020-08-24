@@ -1,6 +1,6 @@
 <?php
 
-class Overview extends CI_Controller {
+class Kategori_kegiatan extends CI_Controller {
     public function __construct()
     {
 		parent::__construct();
@@ -9,6 +9,6 @@ class Overview extends CI_Controller {
 	public function index()
 	{
         // load view admin/overview.php
-        $this->load->view("admin/tambah_kegiatan");
+        $this->load->view("admin/kategori_kegiatan");
 	}
 }

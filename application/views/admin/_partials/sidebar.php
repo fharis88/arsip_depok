@@ -22,20 +22,13 @@
 
 
 
-      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- Nav Item - Data -->
       <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Data</span>
-        </a>
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Manajemen Data</h6>
-            <a class="collapse-item" href="<?php echo site_url('upload_data') ?>">Upload</a>
-            <a class="collapse-item" href="<?php echo site_url('view_data') ?>">View</a>
-          </div>
-        </div>
+        <a class="nav-link" href="<?php echo site_url('data') ?>">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Data</span></a>
       </li>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -43,18 +36,9 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cubes"></i>
-          <span>Kategori dan Kegiatan</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Kategori dan Kegiatan</h6>
-            <a class="collapse-item" href="<?php echo site_url('tambah_kategori') ?>">Tambah Kategori</a>
-            <a class="collapse-item" href="<?php echo site_url('tambah_kegiatan') ?>">Tambah Kegiatan</a>
-            <a class="collapse-item" href="<?php echo site_url('view_kegiatan') ?>">View</a>
-          </div>
-        </div>
+        <a class="nav-link" href="<?php echo site_url('kategori_kegiatan') ?>">
+          <i class="fas fa-fw fa-file-alt"></i>
+          <span>Kategori dan Kegiatan</span></a>
       </li>
 
 
@@ -66,8 +50,7 @@
         Extras
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <!-- Nav Item - Charts -->
+      <!-- Nav Item - Template -->
       <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
         <a class="nav-link" href="<?php echo site_url('template') ?>">
           <i class="fas fa-fw fa-file-alt"></i>
@@ -76,17 +59,9 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-          <i class="fas fa-fw fa-cubes"></i>
-          <span>User</span>
-        </a>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Manajemen User</h6>
-            <a class="collapse-item" href="<?php echo site_url('tambah_user') ?>">Tambah User</a>
-            <a class="collapse-item" href="<?php echo site_url('view_user') ?>">View</a>
-          </div>
-        </div>
+        <a class="nav-link" href="<?php echo site_url('user') ?>">
+          <i class="fas fa-fw fa-file-alt"></i>
+          <span>User</span></a>
       </li>
 
 
