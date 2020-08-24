@@ -40,4 +40,8 @@
     $(document).ready(function() {
       $('#userTable').DataTable();
     });
+
+    $(document).ready(function() {
+      $('#aksesTable').DataTable();
+    });
   </script>>
