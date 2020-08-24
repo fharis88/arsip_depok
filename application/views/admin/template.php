@@ -45,6 +45,7 @@
                       <th>Jenis</th>
                       <th>Judul</th>
                       <th>Tanggal Upload</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -53,18 +54,51 @@
                       <td>Foto</td>
                       <td>Foto Dokumentasi Kegiatan AA</td>
                       <td>2020/04/25</td>
+                      <td>
+                          <a href="#" class="btn-sm btn-success btn-circle">
+                            <i class="fa fa-download"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-warning btn-circle">
+                            <i class="fa fa-pen"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                     </tr>
                     <tr>
                       <td>Kegiatan BB</td>
                       <td>Laporan</td>
                       <td>Laporan Kegiatan BB</td>
                       <td>2020/04/28</td>
+                      <td>
+                          <a href="#" class="btn-sm btn-success btn-circle">
+                            <i class="fa fa-download"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-warning btn-circle">
+                            <i class="fa fa-pen"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                     </tr>
                     <tr>
                       <td>Kegiatan AB</td>
                       <td>File</td>
                       <td>Data Kegiatan AB</td>
                       <td>2020/05/20</td>
+                      <td>
+                          <a href="#" class="btn-sm btn-success btn-circle">
+                            <i class="fa fa-download"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-warning btn-circle">
+                            <i class="fa fa-pen"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                     </tr>
                   </tbody>
                 </table>

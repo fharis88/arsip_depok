@@ -17,6 +17,7 @@
   <script src="<?php echo base_url('js/demo/chart-pie-demo.js') ?>"></script>
 
   <script src="<?php echo base_url('assets/datatables/jquery.dataTables.min.js') ?>"></script>
+  
   <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.min.js') ?>"></script>
 
   <!-- Page level custom scripts -->

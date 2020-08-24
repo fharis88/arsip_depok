@@ -35,19 +35,19 @@
         <div class="modal-body">
               <form class="data">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="Judul" placeholder="Judul......">
+                  <input type="text" class="form-control form-control-user" id="Judul_data" placeholder="Judul......">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="Kategori" placeholder="Kategori......">
+                    <input type="text" class="form-control form-control-user" name="Kategori_data" placeholder="Kategori......">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="Kegiatan" placeholder="Kegiatan.....">
+                    <input type="text" class="form-control form-control-user" name="Kegiatan_data" placeholder="Kegiatan.....">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control" id="Jenis" placeholder="Jenis Data.....">
+                    <select class="form-control" name="Jenis_data" placeholder="Jenis Data.....">
                       <option>SPJ</option>
                       <option>SK</option>
                       <option>Laporan Kegiatan</option>
@@ -58,14 +58,14 @@
                     </select>
                   </div>
                   <div class="col-sm-6">
-                    <input type="date" class="form-control" id="Tanggal" placeholder="Tanggal.....">
+                    <input type="date" class="form-control" name="Tanggal_data" placeholder="Tanggal.....">
                   </div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" id="Keterangan" rows="5" placeholder="Keterangan....."></textarea>
+                  <textarea class="form-control" name="Keterangan_data" rows="5" placeholder="Keterangan....."></textarea>
                 </div>
                 <div class="form-group">
-                  <input type="file" class="form-control-file form-control-user" id="File" placeholder="file">
+                  <input type="file" class="form-control-file form-control-user" name="File_data" placeholder="file">
                 </div>
               </form>
         </div>
@@ -90,16 +90,16 @@
         <div class="modal-body">
               <form class="template">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="Judul" placeholder="Judul......">
+                  <input type="text" class="form-control form-control-user" name="Judul_template" placeholder="Judul......">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="Kegiatan" placeholder="Kegiatan.....">
+                    <input type="text" class="form-control form-control-user" name="Kegiatan_template" placeholder="Kegiatan.....">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control" id="Jenis" placeholder="Jenis Data.....">
+                    <select class="form-control" id="Jenis_template" placeholder="Jenis Data.....">
                       <option>SPJ</option>
                       <option>SK</option>
                       <option>Laporan Kegiatan</option>
@@ -110,14 +110,14 @@
                     </select>
                   </div>
                   <div class="col-sm-6">
-                    <input type="date" class="form-control" id="Tanggal" placeholder="Tanggal.....">
+                    <input type="date" class="form-control" name="Tanggal_template" placeholder="Tanggal.....">
                   </div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" id="Keterangan" rows="5" placeholder="Keterangan....."></textarea>
+                  <textarea class="form-control" name="Keterangan_template" rows="5" placeholder="Keterangan....."></textarea>
                 </div>
                 <div class="form-group">
-                  <input type="file" class="form-control-file form-control-user" id="File" placeholder="file">
+                  <input type="file" class="form-control-file form-control-user" name="File_template" placeholder="file">
                 </div>
               </form>
         </div>
@@ -142,13 +142,13 @@
         <div class="modal-body">
                 <form class="user">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="nip_lama" placeholder="NIP Lama......">
+                    <input type="text" class="form-control form-control-user" name="nip_lama_user" placeholder="NIP Lama......">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="nama" placeholder="Nama......">
+                    <input type="text" class="form-control form-control-user" name="nama_user" placeholder="Nama......">
                   </div>
                   <div>
-                    <select class="form-control " id="tipe">
+                    <select class="form-control " name="tipe_user">
                       <option>Admin</option>
                       <option>Kepala</option>
                       <option>Kepala Subbagian</option>
@@ -160,7 +160,7 @@
                     </select>
                   </div>
                   <div>
-                    <select class="form-control " id="seksi">
+                    <select class="form-control " name="seksi_user">
                       <option>-</option>
                       <option>TU</option>
                       <option>Seksi Statistik Sosial</option>
@@ -171,10 +171,10 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user" id="Password" placeholder="Password......">
+                    <input type="password" class="form-control form-control-user" name="Password_user" placeholder="Password......">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user" id="Password_Ulang" placeholder="Tuliskan kembali Password......">
+                    <input type="password" class="form-control form-control-user" name="Password_Ulang_user" placeholder="Tuliskan kembali Password......">
                   </div>
                 </form>
         </div>
@@ -197,24 +197,21 @@
           </button>
         </div>
         <div class="modal-body">
-                <form class="kategori">
+                <form action="<?php echo site_url('admin/kategori_kegiatan/add') ?>" method="post" enctype="multipart/form-data" >
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="Kategori" placeholder="Nama Kategori......">
+                    <input type="text" class="form-control form-control-user" name="Kategori_kategori" placeholder="Nama Kategori......">
                   </div>
                   <div class="form-group">
-                    <textarea class="form-control" id="Keterangan" rows="5" placeholder="Keterangan....."></textarea>
+                    <textarea class="form-control" name="Keterangan_kategori" rows="5" placeholder="Keterangan....."></textarea>
                   </div>
+                  <input class="btn btn-success" type="submit" name="tambah_kategori" value="Tambah Kategori" />
                 </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href=#>Tambah Kategori</a>
         </div>
       </div>
     </div>
   </div>
 
-      <!-- Tambah Keterangan Modal-->
+      <!-- Tambah Kegiatan Modal-->
   <div class="modal fade" id="tambah_kegiatan_Modal" tabindex="-1" role="dialog" aria-labelledby="tambah_kegiatan_ModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -227,16 +224,16 @@
         <div class="modal-body">
                 <form class="user">
                   <div>
-                    <select class="form-control " id="Kategori">
+                    <select class="form-control " name="Kategori_kegiatan">
                       <option>Kategori A</option>
                       <option>Kategori B</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control " id="Kegiatan" placeholder="Nama Kegiatan......">
+                    <input type="text" class="form-control " name="Kegiatan_kegiatan" placeholder="Nama Kegiatan......">
                   </div>
                   <div class="form-group">
-                    <textarea class="form-control" id="Keterangan" rows="5" placeholder="Keterangan....."></textarea>
+                    <textarea class="form-control" name="Keterangan_kegiatan" rows="5" placeholder="Keterangan....."></textarea>
                   </div>
                 </form>
         </div>

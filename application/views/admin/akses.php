@@ -46,6 +46,7 @@
                       <th>Kategori</th>
                       <th>Kegiatan</th>
                       <th>Akses</th>
+                      <td>Action</td>
                     </tr>
                   </thead>
                   <tbody>
@@ -55,6 +56,11 @@
                       <td>TU</td>
                       <td>Gaji</td>
                       <td>Add, View, Download</td>
+                      <td>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                     </tr>
                     <tr>
                       <td>340059515</td>
@@ -62,6 +68,11 @@
                       <td>IPDS</td>
                       <td>Wilayah Kerja Statistik</td>
                       <td>Add, View, Download</td>
+                      <td>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                     </tr>
                   </tbody>
                 </table>

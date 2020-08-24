@@ -26,6 +26,11 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <?php if ($this->session->flashdata('success')): ?>
+        <div class="alert alert-success" role="alert">
+          <?php echo $this->session->flashdata('success'); ?>
+        </div>
+        <?php endif; ?>
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Kategori dan Kegiatan</h1>
@@ -43,17 +48,49 @@
                       <tr>
                         <th>Kategori</th>
                         <th>Keterangan</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>Kategori A</td>
                         <td>Kategori pada seksi A</td>
+                        <td>
+                          <a href="#" class="btn-sm btn-warning btn-circle">
+                            <i class="fa fa-pen"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
+                        
                       </tr>
                       <tr>
                         <td>Kategori B</td>
                         <td>Kategori pada seksi B</td>
+                        <td>
+                          <a href="#" class="btn-sm btn-warning btn-circle">
+                            <i class="fa fa-pen"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                       </tr>
+                      <?php foreach ($kategori as $kategoris): ?>
+                      <tr>
+                        <td>
+                          <?php echo $kategoris->kategori ?>
+                        </td>
+                        <td>
+                          <?php echo $kategoris->keterangan ?>
+                        </td>
+                        <td>
+                          <a onclick="deleteConfirm('<?php echo site_url('admin/kategori_kegiatan/delete/'.$kategoris->id_kategori) ?>')"
+                       href="#!" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                        </td>
+                      </tr>
+                      <?php endforeach; ?>
                     </tbody>
                   </table>
                 </div>
@@ -73,6 +110,7 @@
                         <th>Kategori</th>
                         <th>Kegiatan</th>
                         <th>Keterangan</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -80,6 +118,14 @@
                         <td>Kategori A</td>
                         <td>Kegiatan AA</td>
                         <td>kegiatan AA pada seksi A</td>
+                        <td>
+                          <a href="#" class="btn-sm btn-warning btn-circle">
+                            <i class="fa fa-pen"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                       </tr>
                       <tr>
                         <td>Kategori B</td>
@@ -90,6 +136,14 @@
                         <td>Kategori A</td>
                         <td>Kegiatan AB</td>
                         <td>Kegiatan AB pada seksi A</td>
+                        <td>
+                          <a href="#" class="btn-sm btn-warning btn-circle">
+                            <i class="fa fa-pen"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                       </tr>
                     </tbody>
                   </table>

@@ -45,6 +45,7 @@
                       <th>Nama</th>
                       <th>Tipe User</th>
                       <th>Seksi</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -53,12 +54,28 @@
                       <td>Rizky Aldi Kurniawan A.P.Kb.N.</td>
                       <td>Staff</td>
                       <td>Subbagian Tata Usaha</td>
+                      <td>
+                          <a href="#" class="btn-sm btn-warning btn-circle">
+                            <i class="fa fa-pen"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                     </tr>
                     <tr>
                       <td>340059515</td>
                       <td>Faisal Haris</td>
                       <td>Staff</td>
                       <td>Seksi Integrasi Pengolahan dan Diseminasi Statistik</td>
+                      <td>
+                          <a href="#" class="btn-sm btn-warning btn-circle">
+                            <i class="fa fa-pen"></i>
+                          </a>
+                          <a href="#" class="btn-sm btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
                     </tr>
                   </tbody>
                 </table>
