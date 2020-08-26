@@ -39,7 +39,7 @@
             <div class="card shadow mb-4 col-md-6">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Tabel Kategori</h6>
-                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_kategori_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Kategori</a>
+                <a href="#!" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_kategori_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Kategori</a>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -52,31 +52,6 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Kategori A</td>
-                        <td>Kategori pada seksi A</td>
-                        <td>
-                          <a href="#" class="btn-sm btn-warning btn-circle">
-                            <i class="fa fa-pen"></i>
-                          </a>
-                          <a href="#" class="btn-sm btn-danger btn-circle">
-                            <i class="fa fa-trash"></i>
-                          </a>
-                        </td>
-                        
-                      </tr>
-                      <tr>
-                        <td>Kategori B</td>
-                        <td>Kategori pada seksi B</td>
-                        <td>
-                          <a href="#" class="btn-sm btn-warning btn-circle">
-                            <i class="fa fa-pen"></i>
-                          </a>
-                          <a href="#" class="btn-sm btn-danger btn-circle">
-                            <i class="fa fa-trash"></i>
-                          </a>
-                        </td>
-                      </tr>
                       <?php foreach ($kategori as $kategoris): ?>
                       <tr>
                         <td>
@@ -86,8 +61,8 @@
                           <?php echo $kategoris->keterangan ?>
                         </td>
                         <td>
-                          <a onclick="deleteConfirm('<?php echo site_url('admin/kategori_kegiatan/delete/'.$kategoris->id_kategori) ?>')"
-                       href="#!" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                          <a 
+                       href="<?php echo site_url('admin/kategori_kegiatan/delete_kategori/'.$kategoris->id_kategori) ?>" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
                       <?php endforeach; ?>
@@ -114,37 +89,25 @@
                       </tr>
                     </thead>
                     <tbody>
+                      
+                      <?php foreach ($kegiatan as $kegiatans): ?>
                       <tr>
-                        <td>Kategori A</td>
-                        <td>Kegiatan AA</td>
-                        <td>kegiatan AA pada seksi A</td>
                         <td>
-                          <a href="#" class="btn-sm btn-warning btn-circle">
-                            <i class="fa fa-pen"></i>
-                          </a>
-                          <a href="#" class="btn-sm btn-danger btn-circle">
-                            <i class="fa fa-trash"></i>
-                          </a>
+                          <?php echo $kegiatans->kategori ?>
                         </td>
-                      </tr>
-                      <tr>
-                        <td>Kategori B</td>
-                        <td>Kegiatan BB</td>
-                        <td>Kegiatan BB pada seksi B</td>
-                      </tr>
-                      <tr>
-                        <td>Kategori A</td>
-                        <td>Kegiatan AB</td>
-                        <td>Kegiatan AB pada seksi A</td>
                         <td>
-                          <a href="#" class="btn-sm btn-warning btn-circle">
-                            <i class="fa fa-pen"></i>
-                          </a>
-                          <a href="#" class="btn-sm btn-danger btn-circle">
-                            <i class="fa fa-trash"></i>
-                          </a>
+                          <?php echo $kegiatans->kegiatan ?>
                         </td>
-                      </tr>
+                        <td>
+                          <?php echo $kegiatans->keterangan ?>
+                        </td>
+                        <td>
+                          <a 
+                       href="<?php echo site_url('admin/kategori_kegiatan/delete_kegiatan/'.$kegiatans->id_kegiatan) ?>" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                        </td>
+                       </tr>
+                      <?php endforeach; ?>
+                      
                     </tbody>
                   </table>
                 </div>
@@ -169,10 +132,13 @@
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <?php $this->load->view("admin/_partials/modal.php") ?>
+  <?php $this->load->view("admin/_partials/tambah_modal.php") ?>
+  <?php $this->load->view("admin/_partials/edit_modal.php") ?>
 
-  <!-- Bootstrap core JavaScript-->
   <?php $this->load->view("admin/_partials/js.php") ?>
+
+
+
 
 </body>
 

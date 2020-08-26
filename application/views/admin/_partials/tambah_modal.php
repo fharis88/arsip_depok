@@ -140,7 +140,7 @@
           </button>
         </div>
         <div class="modal-body">
-                <form class="user">
+                <form action="<?php echo site_url('admin/user/add_user') ?>" method="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <input type="text" class="form-control form-control-user" name="nip_lama_user" placeholder="NIP Lama......">
                   </div>
@@ -171,16 +171,13 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user" name="Password_user" placeholder="Password......">
+                    <input type="password" class="form-control form-control-user" name="password_user" placeholder="Password......">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user" name="Password_Ulang_user" placeholder="Tuliskan kembali Password......">
+                    <input type="hidden" class="form-control form-control-user" name="Password_Ulang_user" placeholder="Tuliskan kembali Password......">
                   </div>
+                  <input class="btn btn-success" type="submit" name="tambah_user" value="Tambah User" />
                 </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href=#>Tambah User</a>
         </div>
       </div>
     </div>
@@ -197,7 +194,10 @@
           </button>
         </div>
         <div class="modal-body">
-                <form action="<?php echo site_url('admin/kategori_kegiatan/add') ?>" method="post" enctype="multipart/form-data" >
+                <form action="<?php echo site_url('admin/kategori_kegiatan/add_kategori') ?>" method="post" enctype="multipart/form-data" >
+                  <div class="form-group">
+                    <input type="hidden" name="id_kategori" value="" />
+                  </div>
                   <div class="form-group">
                     <input type="text" class="form-control form-control-user" name="Kategori_kategori" placeholder="Nama Kategori......">
                   </div>
@@ -222,11 +222,15 @@
           </button>
         </div>
         <div class="modal-body">
-                <form class="user">
+                <form action="<?php echo site_url('admin/kategori_kegiatan/add_kegiatan') ?>" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <input type="hidden" name="id_kegiatan" value="" />
+                  </div>
                   <div>
                     <select class="form-control " name="Kategori_kegiatan">
-                      <option>Kategori A</option>
-                      <option>Kategori B</option>
+                    <?php foreach($kategori as $row):?>
+                     <option value="<?php echo $row->kategori;?>"><?php echo $row->kategori;?></option>
+                        <?php endforeach;?>
                     </select>
                   </div>
                   <div class="form-group">
@@ -235,11 +239,8 @@
                   <div class="form-group">
                     <textarea class="form-control" name="Keterangan_kegiatan" rows="5" placeholder="Keterangan....."></textarea>
                   </div>
+                  <input class="btn btn-success" type="submit" name="tambah_kategori" value="Tambah kegiatan" />
                 </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href=#>Tambah Kegiatan</a>
         </div>
       </div>
     </div>

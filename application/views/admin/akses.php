@@ -28,13 +28,13 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">User</h1>
+          <h1 class="h3 mb-2 text-gray-800">Akses</h1>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel User</h6>
-              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_user_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah User</a>
+              <h6 class="m-0 font-weight-bold text-primary">Tabel Akses</h6>
+              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_Akses_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Akses</a>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -98,7 +98,8 @@
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <?php $this->load->view("admin/_partials/modal.php") ?>
+  <?php $this->load->view("admin/_partials/tambah_modal.php") ?>
+  <?php $this->load->view("admin/_partials/edit_modal.php") ?>
 
   <!-- Bootstrap core JavaScript-->
   <?php $this->load->view("admin/_partials/js.php") ?>

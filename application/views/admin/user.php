@@ -26,6 +26,11 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <?php if ($this->session->flashdata('success')): ?>
+        <div class="alert alert-success" role="alert">
+          <?php echo $this->session->flashdata('success'); ?>
+        </div>
+        <?php endif; ?>
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">User</h1>
@@ -49,34 +54,26 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>340059936</td>
-                      <td>Rizky Aldi Kurniawan A.P.Kb.N.</td>
-                      <td>Staff</td>
-                      <td>Subbagian Tata Usaha</td>
-                      <td>
-                          <a href="#" class="btn-sm btn-warning btn-circle">
-                            <i class="fa fa-pen"></i>
-                          </a>
-                          <a href="#" class="btn-sm btn-danger btn-circle">
-                            <i class="fa fa-trash"></i>
-                          </a>
+                    <?php foreach ($user as $users): ?>
+                      <tr>
+                        <td>
+                          <?php echo $users->nip_lama ?>
                         </td>
-                    </tr>
-                    <tr>
-                      <td>340059515</td>
-                      <td>Faisal Haris</td>
-                      <td>Staff</td>
-                      <td>Seksi Integrasi Pengolahan dan Diseminasi Statistik</td>
-                      <td>
-                          <a href="#" class="btn-sm btn-warning btn-circle">
-                            <i class="fa fa-pen"></i>
-                          </a>
-                          <a href="#" class="btn-sm btn-danger btn-circle">
-                            <i class="fa fa-trash"></i>
-                          </a>
+                        <td>
+                          <?php echo $users->nama ?>
                         </td>
-                    </tr>
+                        <td>
+                          <?php echo $users->tipe_user ?>
+                        </td>
+                        <td>
+                          <?php echo $users->seksi ?>
+                        </td>
+                        <td>
+                          <a 
+                       href="<?php echo site_url('admin/user/delete_user/'.$users->nip_lama) ?>" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                        </td>
+                      </tr>
+                      <?php endforeach; ?>
                   </tbody>
                 </table>
               </div>
@@ -101,7 +98,8 @@
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <?php $this->load->view("admin/_partials/modal.php") ?>
+  <?php $this->load->view("admin/_partials/tambah_modal.php") ?>
+  <?php $this->load->view("admin/_partials/edit_modal.php") ?>
 
   <!-- Bootstrap core JavaScript-->
   <?php $this->load->view("admin/_partials/js.php") ?>
