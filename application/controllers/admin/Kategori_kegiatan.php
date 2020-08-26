@@ -10,6 +10,7 @@ class Kategori_kegiatan extends CI_Controller {
 		$this->load->model("kegiatan_model");
 		
 		$this->load->database();
+        $this->load->library('upload');
 	}
 
 	public function index()

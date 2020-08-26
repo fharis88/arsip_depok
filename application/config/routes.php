@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['dashboard'] = 'admin/overview';
 
 
-$route['data'] = 'admin/data';
+$route['dokumen'] = 'admin/dokumen';
 
 $route['kategori_kegiatan'] = 'admin/kategori_kegiatan';
 

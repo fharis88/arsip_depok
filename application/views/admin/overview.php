@@ -170,7 +170,6 @@
 
   <!-- Logout Modal-->
   <?php $this->load->view("admin/_partials/tambah_modal.php") ?>
-  <?php $this->load->view("admin/_partials/edit_modal.php") ?>
 
        <?php $this->load->view("admin/_partials/js.php") ?>
 

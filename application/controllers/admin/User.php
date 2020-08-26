@@ -22,8 +22,8 @@ class User extends CI_Controller {
 	public function add_user()
     {
 
-        $kategori = $this->user_model;
-        $kategori->save_user();
+        $user = $this->user_model;
+        $user->save_user();
         $this->session->set_flashdata('success','User Berhasil Disimpan');
 
  
