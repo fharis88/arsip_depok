@@ -32,14 +32,12 @@ class Kategori_model extends CI_Model
         return $this->db->delete($this->_table, array("id_kategori" => $id));
     }
 
-    public function update_kategori(){
-    	$post = $this->input->post();
-    	$this->id_kategori = $post["id_kategori"];
-    	$this->kategori = $post["Kategori_kategori"];
-        $this->keterangan = $post["Keterangan_kategori"];
+    
 
-    	return $this->db->update($this->_table, $this, array('id_kategori' => $post['id']));
-    }
+    public function update_data($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }   
 
 
 

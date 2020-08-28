@@ -34,5 +34,10 @@ class Kegiatan_model extends CI_Model
         return $this->db->delete($this->_table, array("id_kegiatan" => $id));
     }
 
+    public function update_data($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }   
+
 
 }

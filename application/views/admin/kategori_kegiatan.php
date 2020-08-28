@@ -36,7 +36,7 @@
           <h1 class="h3 mb-2 text-gray-800">Kategori dan Kegiatan</h1>
           <div class="row">
             <!-- DataTales Example -->
-            <div class="card shadow mb-4 col-md-6">
+            <div class="card shadow mb-4 col-md-6 d-none">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Tabel Kategori</h6>
                 <a href="#!" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_kategori_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Kategori</a>
@@ -62,6 +62,9 @@
                         </td>
                         <td>
                           <a 
+                       href="<?php echo site_url('admin/kategori_kegiatan/edit_kategori/'.$kategoris->id_kategori) ?>" class="btn-sm btn-warning btn-circle"><i class="fas fa-pen"></i></a>
+
+                          <a 
                        href="<?php echo site_url('admin/kategori_kegiatan/delete_kategori/'.$kategoris->id_kategori) ?>" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
@@ -72,9 +75,10 @@
               </div>
             </div>
 
-            <div class="card shadow mb-4 col-md-6">
+            <div class="card shadow mb-4 col-md-12">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Tabel Kegiatan</h6>
+                <a href="#!" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_kategori_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Kategori</a>
                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_kegiatan_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Kegiatan</a>
               </div>
               <div class="card-body">
@@ -102,6 +106,9 @@
                           <?php echo $kegiatans->keterangan ?>
                         </td>
                         <td>
+                          <a 
+                       href="<?php echo site_url('admin/kategori_kegiatan/edit_kegiatan/'.$kegiatans->id_kegiatan) ?>" class="btn-sm btn-warning btn-circle"><i class="fas fa-pen"></i></a>
+
                           <a 
                        href="<?php echo site_url('admin/kategori_kegiatan/delete_kegiatan/'.$kegiatans->id_kegiatan) ?>" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                         </td>
@@ -135,7 +142,7 @@
   <?php $this->load->view("admin/_partials/tambah_modal.php") ?>
 
   <?php $this->load->view("admin/_partials/js.php") ?>
-
+  
 
 
 

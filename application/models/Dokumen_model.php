@@ -14,6 +14,7 @@ class Dokumen_model extends CI_Model
     public $file;
     public $id_user;
     public $waktu_upload;
+    public $ukuran;
     
     
 
@@ -21,11 +22,12 @@ class Dokumen_model extends CI_Model
     public function getAll_dokumen()
     {
         return $this->db->get($this->_table)->result();
+
     }
     
    
     
-        public function save_dokumen()
+        public function save_dokumen($pecah,$size)
     {
         $post = $this->input->post();
         $this->judul = $post["Judul_data"];
@@ -33,10 +35,13 @@ class Dokumen_model extends CI_Model
         $this->kegiatan = $post["Kegiatan_data"];
         $this->jenis = $post["Jenis_data"];
         $this->tanggal = $post["Tanggal_data"];
-        $this->keterangan = $post["Tanggal_data"];
+        $this->keterangan = $post["Keterangan_data"];
         $this->id_user = $post["Id_user"];
+        $this->ukuran = $size;
+
+
         
-        $this->file = $post["Kategori_data"].'-'.$post["Kegiatan_data"].'-'.date('Y-m-d').'-'.$post["Judul_data"];
+        $this->file = $post["Kategori_data"].'-'.$post["Kegiatan_data"].'-'.date('Y-m-d').'-'.$post["Judul_data"].$pecah;
         
 
         return $this->db->insert($this->_table, $this);
@@ -51,6 +56,11 @@ class Dokumen_model extends CI_Model
     {
         return $this->db->delete($this->_table, array("id_data" => $id));
     }
+
+    public function update_dokumen($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }   
 
 
 

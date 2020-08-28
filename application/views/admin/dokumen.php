@@ -50,7 +50,7 @@
                       <th>Kegiatan</th>
                       <th>Jenis</th>
                       <th>Judul</th>
-                      <th>Tanggal</th>
+                      
                       <th>Tanggal Upload</th>
                       <th>Action</th>
                     </tr>
@@ -70,13 +70,15 @@
                         <td>
                           <?php echo $dokumens->judul ?>
                         </td>
-                        <td>
-                          <?php echo $dokumens->tanggal ?>
-                        </td>
+                        
                         <td>
                           <?php echo $dokumens->waktu_upload ?>
                         </td>
                         <td>
+                          <a 
+                       href="<?php echo site_url('admin/dokumen/download_dokumen/'.$dokumens->id_data) ?>" class="btn-sm btn-success btn-circle"><i class="fas fa-download"></i></a>
+                       <a 
+                       href="<?php echo site_url('admin/dokumen/edit_dokumen/'.$dokumens->id_data) ?>" class="btn-sm btn-warning btn-circle"><i class="fas fa-pen"></i></a>
                           <a 
                        href="<?php echo site_url('admin/dokumen/delete_dokumen/'.$dokumens->id_data) ?>" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                         </td>
@@ -110,6 +112,28 @@
   <!-- Bootstrap core JavaScript-->
     <?php $this->load->view("admin/_partials/js.php") ?>
 
+   
+<script type="text/javascript">
+  
+  
+
+  function getKegiatan() {
+    var sel = document.getElementById('data_kategori');
+    
+    var divsAll = document.getElementsByClassName('kegiatan_vis');
+    var divsHid = document.getElementsByClassName(sel.value);
+
+    for(var i = 0; i < divsAll.length; i++){
+        divsAll[i].style.visibility = "hidden"; // or
+    }
+
+    for(var i = 0; i < divsHid.length; i++){
+        divsHid[i].style.visibility = "visible"; // or
+    }
+    //document.getElementsByClassName(sel.value)[0].style.visibility = 'hidden'; 
+}
+
+</script>
 </body>
 
 </html>

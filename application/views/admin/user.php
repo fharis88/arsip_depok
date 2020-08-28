@@ -70,6 +70,9 @@
                         </td>
                         <td>
                           <a 
+                       href="<?php echo site_url('admin/user/edit_user/'.$users->nip_lama) ?>" class="btn-sm btn-warning btn-circle"><i class="fas fa-pen"></i></a>
+                        
+                          <a 
                        href="<?php echo site_url('admin/user/delete_user/'.$users->nip_lama) ?>" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>

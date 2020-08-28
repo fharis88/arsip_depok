@@ -51,7 +51,7 @@
       </div>
 
       <!-- Nav Item - Template -->
-      <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
+      <li class="d-none nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
         <a class="nav-link" href="<?php echo site_url('template') ?>">
           <i class="fas fa-fw fa-file-alt"></i>
           <span>Template</span></a>
@@ -65,7 +65,7 @@
       </li>
 
       <!-- Nav Item - Aksesibilitas -->
-      <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
+      <li class="d-none nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
         <a class="nav-link" href="<?php echo site_url('akses') ?>">
           <i class="fas fa-fw fa-map-signs"></i>
           <span>Akses</span></a>

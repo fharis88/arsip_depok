@@ -16,7 +16,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?php echo site_url('login') ?>">Logout</a>
+          <a class="btn btn-primary" href="<?php echo site_url('dashboard') ?>">Logout</a>
         </div>
       </div>
     </div>
@@ -36,6 +36,7 @@
                 <form action="<?php echo site_url('admin/kategori_kegiatan/add_kegiatan') ?>" method="post" enctype="multipart/form-data" >
                   <div>
                     <select class="form-control " name="Kategori_kegiatan">
+                      <option class="d-none" >Kategori... </option>
                       <?php foreach ($kategori as $kategoriss): ?>
                       <option value="<?php echo $kategoriss->kategori ?>">
                           <?php echo $kategoriss->kategori ?>
@@ -105,6 +106,7 @@
                   </div>
                   <div>
                     <select class="form-control " name="tipe_user">
+                      <option class="d-none" > - </option>
                       <option>Admin</option>
                       <option>Kepala</option>
                       <option>Kepala Subbagian</option>
@@ -117,7 +119,7 @@
                   </div>
                   <div>
                     <select class="form-control " name="seksi_user">
-                      <option>-</option>
+                      <option class="d-none">Seksi...</option>
                       <option>TU</option>
                       <option>Seksi Statistik Sosial</option>
                       <option>Seksi Statistik Produksi</option>
@@ -159,7 +161,8 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control " name="Kategori_data">
+                    <select class="form-control " name="Kategori_data" id="data_kategori" onchange="getKegiatan()">
+                      <option class="d-none" >Kategori...</option>
                     <?php foreach($kategori as $row):?>
                      <option value="<?php echo $row->kategori;?>"><?php echo $row->kategori;?></option>
                         <?php endforeach;?>
@@ -167,8 +170,9 @@
                   </div>
                   <div class="col-sm-6">
                     <select class="form-control " name="Kegiatan_data">
+                      <option class="d-none" >Kegiatan...</option>
                     <?php foreach($kegiatan as $row):?>
-                     <option value="<?php echo $row->kegiatan;?>"><?php echo $row->kegiatan;?></option>
+                     <option class="kegiatan_vis <?php echo $row->kategori;?> " value="<?php echo $row->kegiatan;?>"><?php echo $row->kegiatan;?></option>
                         <?php endforeach;?>
                     </select>
                   </div>
@@ -176,6 +180,7 @@
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <select class="form-control" name="Jenis_data" placeholder="Jenis Data.....">
+                      <option class="d-none" >Jenis data...</option>
                       <option>SPJ</option>
                       <option>SK</option>
                       <option>Laporan Kegiatan</option>
@@ -185,7 +190,7 @@
                       <option>Lainnya</option>
                     </select>
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-6 d-none">
                     <input type="date" class="form-control" name="Tanggal_data" placeholder="Tanggal.....">
                   </div>
                 </div>

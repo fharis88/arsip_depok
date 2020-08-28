@@ -38,5 +38,10 @@ class User_model extends CI_Model
         return $this->db->delete($this->_table, array("nip_lama" => $id));
     }
 
+    public function update_user($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
+
 
 }
