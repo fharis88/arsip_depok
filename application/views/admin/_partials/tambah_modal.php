@@ -109,7 +109,6 @@
                       <option class="d-none" > - </option>
                       <option>Admin</option>
                       <option>Kepala</option>
-                      <option>Kepala Subbagian</option>
                       <option>Kepala Seksi</option>
                       <option>Staff</option>
                       <option>KSK</option>
