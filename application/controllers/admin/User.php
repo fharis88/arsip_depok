@@ -13,7 +13,7 @@ class User extends CI_Controller {
 	public function index()
 	{
         // load view admin/overview.php
-        if ($this->session->userdata('masuk') and $this->session->userdata('tipe_user')=="admin") {
+        if ($this->session->userdata('masuk') and ($this->session->userdata('tipe_user')=="Admin"||$this->session->userdata('tipe_user')=="Kepala"||$this->session->userdata('tipe_user')=="Kepala Seksi")) {
             $data["user"] = $this->user_model->getAll_user();
         
         $this->load->view("admin/user",$data);

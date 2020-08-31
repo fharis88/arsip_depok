@@ -58,7 +58,11 @@
       </li>
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
+      <li class=" <?php if ($this->session->userdata('tipe_user')=="Admin"||$this->session->userdata('tipe_user')=="Kepala Seksi"||$this->session->userdata('tipe_user')=="Kepala") {
+                            # code...
+                          }else
+                            echo 'd-none'
+                          ?> nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
         <a class="nav-link" href="<?php echo site_url('user') ?>">
           <i class="fas fa-fw fa-users"></i>
           <span>User</span></a>

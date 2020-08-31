@@ -39,7 +39,11 @@
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h5 class="m-0 font-weight-bold text-primary">Tabel Dokumen</h5>
-              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_dokumen_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Data</a>
+              <a href="#" class="<?php if ($this->session->userdata('tipe_user')=="Admin"||$this->session->userdata('tipe_user')=="Kepala Seksi"||$this->session->userdata('tipe_user')=="Staff") {
+                            echo 'd-sm-inline-block';
+                          }else
+                            {echo 'd-none';}
+                          ?> btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_dokumen_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Data</a>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -76,11 +80,19 @@
                         </td>
                         <td>
                           <a 
-                       href="<?php echo site_url('admin/dokumen/download_dokumen/'.$dokumens->id_data) ?>" class="btn-sm btn-success btn-circle"><i class="fas fa-download"></i></a>
+                       href="<?php echo site_url('admin/dokumen/download_dokumen/'.$dokumens->id_data) ?>" class="btn-sm btn-success btn-circle "><i class="fas fa-download"></i></a>
                        <a 
-                       href="<?php echo site_url('admin/dokumen/edit_dokumen/'.$dokumens->id_data) ?>" class="btn-sm btn-warning btn-circle"><i class="fas fa-pen"></i></a>
+                       href="<?php echo site_url('admin/dokumen/edit_dokumen/'.$dokumens->id_data) ?>" class="btn-sm btn-warning btn-circle <?php if ($this->session->userdata('tipe_user')=="Admin"||$this->session->userdata('tipe_user')=="Kepala Seksi"||$this->session->userdata('tipe_user')=="Staff") {
+                            # code...
+                          }else
+                            echo 'd-none'
+                          ?>"><i class="fas fa-pen"></i></a>
                           <a 
-                       href="<?php echo site_url('admin/dokumen/delete_dokumen/'.$dokumens->id_data) ?>" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                       href="<?php echo site_url('admin/dokumen/delete_dokumen/'.$dokumens->id_data) ?>" class="btn-sm btn-danger btn-circle <?php if ($this->session->userdata('tipe_user')=="Admin"||$this->session->userdata('tipe_user')=="Kepala Seksi"||$this->session->userdata('tipe_user')=="Staff") {
+                            # code...
+                          }else
+                            echo 'd-none'
+                          ?>"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
                       <?php endforeach; ?>

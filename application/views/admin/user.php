@@ -37,9 +37,14 @@
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
-            <div class="card-header py-3">
+            <div class="card-header py-3
+            <?php if ($this->session->userdata('tipe_user')=="Admin"||$this->session->userdata('tipe_user')=="Kepala Seksi") {
+                            # code...
+                          }else
+                            echo 'd-none'
+                          ?>">
               <h6 class="m-0 font-weight-bold text-primary">Tabel User</h6>
-              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_user_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah User</a>
+              <a href="#" class=" d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_user_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah User</a>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -69,11 +74,20 @@
                           <?php echo $users->seksi ?>
                         </td>
                         <td>
+
                           <a 
-                       href="<?php echo site_url('admin/user/edit_user/'.$users->nip_lama) ?>" class="btn-sm btn-warning btn-circle"><i class="fas fa-pen"></i></a>
+                       href="<?php echo site_url('admin/user/edit_user/'.$users->nip_lama) ?>" class="btn-sm btn-warning btn-circle  <?php if ($this->session->userdata('tipe_user')=="Admin"||$this->session->userdata('tipe_user')=="Kepala Seksi") {
+                            # code...
+                          }else
+                            echo 'd-none'
+                          ?>"><i class="fas fa-pen"></i></a>
                         
                           <a 
-                       href="<?php echo site_url('admin/user/delete_user/'.$users->nip_lama) ?>" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                       href="<?php echo site_url('admin/user/delete_user/'.$users->nip_lama) ?>" class="btn-sm btn-danger btn-circle <?php if ($this->session->userdata('tipe_user')=="Admin"||$this->session->userdata('tipe_user')=="Kepala Seksi") {
+                            # code...
+                          }else
+                            echo 'd-none'
+                          ?>"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
                       <?php endforeach; ?>
