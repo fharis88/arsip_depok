@@ -16,7 +16,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?php echo site_url('dashboard') ?>">Logout</a>
+          <a class="btn btn-primary" href="<?php echo site_url('admin/login/logout') ?>">Logout</a>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
         <div class="modal-body">
                 <form action="<?php echo site_url('admin/kategori_kegiatan/add_kegiatan') ?>" method="post" enctype="multipart/form-data" >
                   <div>
-                    <select class="form-control " name="Kategori_kegiatan">
+                    <select class="form-control " name="Kategori_kegiatan" required>
                       <option class="d-none" >Kategori... </option>
                       <?php foreach ($kategori as $kategoriss): ?>
                       <option value="<?php echo $kategoriss->kategori ?>">
@@ -45,12 +45,12 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control " name="Kegiatan_kegiatan" placeholder="Nama Kegiatan......">
+                    <input type="text" class="form-control " name="Kegiatan_kegiatan" placeholder="Nama Kegiatan......" required>
                   </div>
                   <div class="form-group">
-                    <textarea class="form-control" name="Keterangan_kegiatan" rows="5" placeholder="Keterangan....."></textarea>
+                    <textarea class="form-control" name="Keterangan_kegiatan" rows="5" placeholder="Keterangan....." required></textarea>
                   </div>
-                  <input class="btn btn-success" type="submit" name="tambah_kategori" value="Tambah Kategori" />
+                  <input class="btn btn-success" type="submit" name="tambah_kegiatan" value="Save" />
                 </form>
         </div>
         
@@ -74,12 +74,12 @@
                     <input type="hidden" name="id_kategori" value="" />
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="Kategori_kategori" placeholder="Nama Kategori......">
+                    <input type="text" class="form-control form-control-user" name="Kategori_kategori" placeholder="Nama Kategori......" required>
                   </div>
                   <div class="form-group">
-                    <textarea class="form-control" name="Keterangan_kategori" rows="5" placeholder="Keterangan....."></textarea>
+                    <textarea class="form-control" name="Keterangan_kategori" rows="5" placeholder="Keterangan....." required></textarea>
                   </div>
-                  <input class="btn btn-success" type="submit" name="tambah_kategori" value="Tambah Kategori" />
+                  <input class="btn btn-success" type="submit" name="tambah_kategori" value="Save" />
                 </form>
         </div>
       </div>
@@ -99,13 +99,13 @@
         <div class="modal-body">
                 <form action="<?php echo site_url('admin/user/add_user') ?>" method="post" enctype="multipart/form-data">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="nip_lama_user" placeholder="NIP Lama......">
+                    <input type="text" class="form-control form-control-user" name="nip_lama_user" placeholder="NIP Lama......" required maxlength="9" minlength="9">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="nama_user" placeholder="Nama......">
+                    <input type="text" class="form-control form-control-user" name="nama_user" placeholder="Nama......" required>
                   </div>
                   <div>
-                    <select class="form-control " name="tipe_user">
+                    <select class="form-control " name="tipe_user" required>
                       <option class="d-none" > - </option>
                       <option>Admin</option>
                       <option>Kepala</option>
@@ -118,7 +118,7 @@
                     </select>
                   </div>
                   <div>
-                    <select class="form-control " name="seksi_user">
+                    <select class="form-control " name="seksi_user" required>
                       <option class="d-none">Seksi...</option>
                       <option>TU</option>
                       <option>Seksi Statistik Sosial</option>
@@ -129,12 +129,12 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user" name="password_user" placeholder="Password......">
+                    <input type="password" class="form-control form-control-user" name="password_user" placeholder="Password......" required>
                   </div>
                   <div class="form-group">
-                    <input type="hidden" class="form-control form-control-user" name="Password_Ulang_user" placeholder="Tuliskan kembali Password......">
+                    <input type="hidden" class="form-control form-control-user" name="Password_Ulang_user" placeholder="Tuliskan kembali Password......" required>
                   </div>
-                  <input class="btn btn-success" type="submit" name="tambah_user" value="Tambah User" />
+                  <input class="btn btn-success" type="submit" name="tambah_user" value="Save" />
                 </form>
         </div>
       </div>
@@ -157,11 +157,11 @@
 
                   <div class="form-group">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" name="Judul_data" placeholder="Judul......">
+                  <input type="text" class="form-control form-control-user" name="Judul_data" placeholder="Judul......" required>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control " name="Kategori_data" id="data_kategori" onchange="getKegiatan()">
+                    <select class="form-control " name="Kategori_data" id="data_kategori" onchange="getKegiatan()" required>
                       <option class="d-none" >Kategori...</option>
                     <?php foreach($kategori as $row):?>
                      <option value="<?php echo $row->kategori;?>"><?php echo $row->kategori;?></option>
@@ -169,7 +169,7 @@
                     </select>
                   </div>
                   <div class="col-sm-6">
-                    <select class="form-control " name="Kegiatan_data">
+                    <select class="form-control " name="Kegiatan_data" required>
                       <option class="d-none" >Kegiatan...</option>
                     <?php foreach($kegiatan as $row):?>
                      <option class="kegiatan_vis <?php echo $row->kategori;?> " value="<?php echo $row->kegiatan;?>"><?php echo $row->kegiatan;?></option>
@@ -179,7 +179,7 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control" name="Jenis_data" placeholder="Jenis Data.....">
+                    <select class="form-control" name="Jenis_data" placeholder="Jenis Data....." required>
                       <option class="d-none" >Jenis data...</option>
                       <option>SPJ</option>
                       <option>SK</option>
@@ -191,19 +191,19 @@
                     </select>
                   </div>
                   <div class="col-sm-6 d-none">
-                    <input type="date" class="form-control" name="Tanggal_data" placeholder="Tanggal.....">
+                    <input type="date" class="form-control" name="Tanggal_data" placeholder="Tanggal....." required>
                   </div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="Keterangan_data" rows="5" placeholder="Keterangan....."></textarea>
+                  <textarea class="form-control" name="Keterangan_data" rows="5" placeholder="Keterangan....." required></textarea>
                 </div>
                 <div class="form-group">
-                  <input type="file" class="form-control-file form-control-user" name="File_data" >
+                  <input type="file" class="form-control-file form-control-user" name="File_data" required>
                 </div>
                 <div class="form-group">
                   <input type="hidden" class="form-control-file form-control-user" name="Id_user"  value="340059515">
                 </div>
-                <input class="btn btn-success" type="submit" name="tambah_dokumen" value="Tambah Dokumen" />
+                <input class="btn btn-success" type="submit" name="tambah_dokumen" value="Save" />
               </form>
         </div>
         

@@ -17,11 +17,17 @@ class Dokumen extends CI_Controller {
     public function index()
     {
         // load view admin/overview.php
-        $data["kategori"] = $this->Kategori_model->getAll_kategori();
+        
+
+        if ($this->session->userdata('masuk')) {
+            $data["kategori"] = $this->Kategori_model->getAll_kategori();
         $data["kegiatan"] = $this->Kegiatan_model->getAll_kegiatan();
         $data["dokumen"] = $this->Dokumen_model->getAll_dokumen();
         
         $this->load->view("admin/dokumen",$data);
+        }else{
+            redirect('login');
+        }
     }
 
     public function add_dokumen()
@@ -157,7 +163,7 @@ class Dokumen extends CI_Controller {
             $data["dokumen"] = $this->Dokumen_model->getAll_dokumen();
         
             $this->load->view("admin/dokumen",$data);
-            $this->session->set_flashdata('success','Dokumen Gagal Dirubah');
+            
 
 
 

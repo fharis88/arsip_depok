@@ -9,6 +9,12 @@ class Overview extends CI_Controller {
 	public function index()
 	{
         // load view admin/overview.php
-        $this->load->view("admin/overview");
+        
+        if ($this->session->userdata('masuk')) {
+            $this->load->view("admin/overview");
+        }else{
+            redirect('login');
+        }
+
 	}
 }

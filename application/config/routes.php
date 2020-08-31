@@ -69,3 +69,4 @@ $route['404_override'] = 'not_found';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['edit_kategori'] = 'admin/edit_kategori';
+$route['login'] = 'admin/login';

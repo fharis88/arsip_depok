@@ -28,6 +28,7 @@ class User_model extends CI_Model
         return $this->db->insert($this->_table, $this);
     }
 
+
         public function getById_user($id)
     {
         return $this->db->get_where($this->_table, ["nip_lama" => $id])->row();

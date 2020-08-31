@@ -36,7 +36,7 @@
           <h1 class="h3 mb-2 text-gray-800">Kategori dan Kegiatan</h1>
           <div class="row">
             <!-- DataTales Example -->
-            <div class="card shadow mb-4 col-md-6 d-none">
+            <div class="card shadow mb-4 col-md-6 ">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Tabel Kategori</h6>
                 <a href="#!" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_kategori_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Kategori</a>
@@ -75,7 +75,7 @@
               </div>
             </div>
 
-            <div class="card shadow mb-4 col-md-12">
+            <div class="card shadow mb-4 col-md-6">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Tabel Kegiatan</h6>
                 <a href="#!" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-sm-right" data-toggle="modal" data-target="#tambah_kategori_Modal"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambah Kategori</a>

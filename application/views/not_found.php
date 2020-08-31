@@ -55,7 +55,7 @@
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <?php $this->load->view("admin/_partials/modal.php") ?>
+  <?php $this->load->view("admin/_partials/tambah_modal.php") ?>
 
   <!-- Bootstrap core JavaScript-->
   <?php $this->load->view("admin/_partials/js.php") ?>

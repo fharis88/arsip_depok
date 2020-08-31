@@ -16,10 +16,16 @@ class Kategori_kegiatan extends CI_Controller {
 	public function index()
 	{
         // load view admin/overview.php
-        $data["kategori"] = $this->kategori_model->getAll_kategori();
+        
+
+        if ($this->session->userdata('masuk')) {
+            $data["kategori"] = $this->kategori_model->getAll_kategori();
         $data["kegiatan"] = $this->kegiatan_model->getAll_kegiatan();
         
         $this->load->view("admin/kategori_kegiatan",$data);
+        }else{
+            redirect('login');
+        }
 	}
 
 	    public function add_kategori()
