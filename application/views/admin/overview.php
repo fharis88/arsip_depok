@@ -42,7 +42,9 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Arsip</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">512</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <?php echo $summary[0]->count ?>
+                      </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-archive fa-2x text-gray-300"></i>
@@ -60,14 +62,15 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Sisa Penyimpanan</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> Penyimpanan</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo number_format($summary[0]->sum/1024,2,'.','') ?> MB</div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 
+                            <?php echo number_format(1-$summary[0]->sum/100000000,2,'.','') ?>%" aria-valuenow="<?php echo number_format(1-$summary[0]->sum/100000000,2,'.','') ?>" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
@@ -92,58 +95,28 @@
             
 
             <!-- Pie Chart -->
-            <div class="col-xl-6 col-lg-5">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Jumlah Arsip</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                  </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
-                  <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> kategori A
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Kategori B
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Kategori C
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
+            
+            
             <!-- Content Column -->
             <div class="col-lg-6 mb-4">
 
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Kategori</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Jumlah Kategori</h6>
                 </div>
+                <?php foreach ($kategori as $kategoris): ?>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold">Kategori A <span class="float-right">55</span></h4>
+                  <h4 class="small font-weight-bold">
+                    <?php echo $kategoris->kategori ?>
+                   <span class="float-right">
+                    <?php echo $kategoris->count ?>
+                   </span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 
+                    <?php echo 100*$kategoris->count/max(array_column($kategori, 'count')) ?>%" aria-valuenow="<?php echo $kategoris->count ?>" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Kategori B <span class="float-right">30</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Kategori C <span class="float-right">15</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 27%" aria-valuenow="27" aria-valuemin="15" aria-valuemax="100"></div>
-                  </div>
+                <?php endforeach; ?>
                 </div>
               </div>
 
