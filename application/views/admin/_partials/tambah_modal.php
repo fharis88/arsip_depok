@@ -189,7 +189,7 @@
                       <option>Lainnya</option>
                     </select>
                   </div>
-                  <div class="col-sm-6 d-none">
+                  <div class="col-sm-6 ">
                     <input type="date" class="form-control" name="Tanggal_data" placeholder="Tanggal....." required>
                   </div>
                 </div>
@@ -197,10 +197,10 @@
                   <textarea class="form-control" name="Keterangan_data" rows="5" placeholder="Keterangan....." required></textarea>
                 </div>
                 <div class="form-group">
-                  <input type="file" class="form-control-file form-control-user" name="File_data" required>
+                  <input type="file" class="form-control-file form-control-user" name="File_data[]" multiple required>
                 </div>
                 <div class="form-group">
-                  <input type="hidden" class="form-control-file form-control-user" name="Id_user"  value="340059515">
+                  <input type="hidden" class="form-control-file form-control-user" name="Id_user"  value="<?php echo $this->session->userdata('nip_lama') ?>">
                 </div>
                 <input class="btn btn-success" type="submit" name="tambah_dokumen" value="Save" />
               </form>

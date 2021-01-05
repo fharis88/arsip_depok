@@ -6,6 +6,14 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admin/overview');
+		
+		if ($this->session->userdata('masuk')) {
+        $this->load->view('admin/overview');
+               
+        }else{
+        
+        redirect("login");
+        }
+        
 	}
 }

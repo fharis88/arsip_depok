@@ -8,7 +8,14 @@ class Template extends CI_Controller {
 
 	public function index()
 	{
+        if ($this->session->userdata('masuk')) {
+         $this->load->view("admin/template");
+               
+        }else{
+        
+        redirect("admin/login");
+        }
         // load view admin/overview.php
-        $this->load->view("admin/template");
+       
 	}
 }

@@ -8,7 +8,15 @@ class Akses extends CI_Controller {
 
 	public function index()
 	{
-        // load view admin/overview.php
+        
+		if ($this->session->userdata('masuk')) {
         $this->load->view("admin/akses");
+               
+        }else{
+        
+        redirect("admin/login");
+        }
+        // load view admin/overview.php
+        
 	}
 }

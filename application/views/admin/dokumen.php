@@ -54,7 +54,7 @@
                       <th>Kegiatan</th>
                       <th>Jenis</th>
                       <th>Judul</th>
-                      
+                      <th>Nama File</th>
                       <th>Tanggal Upload</th>
                       <th>Action</th>
                     </tr>
@@ -74,7 +74,9 @@
                         <td>
                           <?php echo $dokumens->judul ?>
                         </td>
-                        
+                        <td>
+                          <?php echo $dokumens->file ?>
+                        </td>
                         <td>
                           <?php echo $dokumens->waktu_upload ?>
                         </td>

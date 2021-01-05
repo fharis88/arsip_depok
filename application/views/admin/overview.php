@@ -127,12 +127,12 @@
 
         </div>
         <!-- /.container-fluid -->
-
+ <?php $this->load->view("admin/_partials/footer.php") ?>
       </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->
-            <?php $this->load->view("admin/_partials/footer.php") ?>
+           
       <!-- End of Footer -->
 
     </div>
@@ -144,7 +144,7 @@
   <!-- Logout Modal-->
   <?php $this->load->view("admin/_partials/tambah_modal.php") ?>
 
-       <?php $this->load->view("admin/_partials/js.php") ?>
+  <?php $this->load->view("admin/_partials/js.php") ?>
 
 </body>
 

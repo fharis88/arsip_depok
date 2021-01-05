@@ -33,36 +33,55 @@ class Dokumen extends CI_Controller {
     public function add_dokumen()
     {
         $post = $this->input->post();
-        $config['upload_path']          = 'upload/';
-        $config['allowed_types']        = 'gif|jpg|png|jpeg|doc|docx|pdf|xls|xlsx|zip|mp3|mp4|flv';
-        $config['max_size']             = 102400;
-        $config['file_name']            = $post["Kategori_data"].'-'.$post["Kegiatan_data"].'-'.date('Y-m-d').'-'.$post["Judul_data"];
-        $config['overwrite']            = true;
-        $config['remove_spaces']            = false;
+        //$errorUploadType = $statusMsg = '';
+
+
+        
+        if(!empty($_FILES['File_data']['name']) ){ 
+
+            $filesCount = count($_FILES['File_data']['name']);
+            
+            for($i = 0; $i < $filesCount; $i++){
+                $_FILES['file']['name']     = $_FILES['File_data']['name'][$i]; 
+                $_FILES['file']['type']     = $_FILES['File_data']['type'][$i]; 
+                $_FILES['file']['tmp_name'] = $_FILES['File_data']['tmp_name'][$i]; 
+                $_FILES['file']['error']     = $_FILES['File_data']['error'][$i]; 
+                $_FILES['file']['size']     = $_FILES['File_data']['size'][$i]; 
+                
+                $config['upload_path']          = 'upload/'.$post["Kategori_data"].'/'.$post["Kegiatan_data"].'/';
+                $config['allowed_types']        = '*';
+                $config['max_size']             = 102400;
+                $config['overwrite']            = true;
+                $config['remove_spaces']        = false;
+                
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+
+                if ( ! $this->upload->do_upload('file')){
+                    $error = array('error' => $this->upload->display_errors());
+                    $this->session->set_flashdata('success','Dokumen Gagal Disimpan'.$this->upload->display_errors());
+                }else{
+                $data = array('upload_data' => $this->upload->data());
         
 
-        $this->upload->initialize($config);
-
-        if ( ! $this->upload->do_upload('File_data')){
-            $error = array('error' => $this->upload->display_errors());
-            $this->load->view('admin/dokumen', $error);
-        }else{
-            $data = array('upload_data' => $this->upload->data());
+                $dokumen = $this->Dokumen_model;
         
+                //$fileName = $_FILES['File_data']['name'];
+                $size = $this->upload->data('file_size');
 
-        $dokumen = $this->Dokumen_model;
-        
-        //$fileName = $_FILES['File_data']['name'];
-        $size = $this->upload->data('file_size');
-
-        //$pecah = explode(".", $fileName);
-        $last = $this->upload->data('file_ext');
+                //$pecah = explode(".", $fileName);
+                $name = $this->upload->data('file_name');
 
 
-        $dokumen->save_dokumen($last,$size);
-        $this->session->set_flashdata('success','Dokumen Berhasil Disimpan');
+                $dokumen->save_dokumen($name,$size);
+                $this->session->set_flashdata('success','Dokumen Berhasil Disimpan');
 
- 
+
+                }
+
+        }
+
+         
         $data["kategori"] = $this->Kategori_model->getAll_kategori();
         $data["kegiatan"] = $this->Kegiatan_model->getAll_kegiatan();
         $data["dokumen"] = $this->Dokumen_model->getAll_dokumen();
@@ -90,8 +109,8 @@ class Dokumen extends CI_Controller {
     }
 
     public function download_dokumen($id=NULL){
-        $nama_file=$this->Dokumen_model->getById_dokumen($id)->file;
-        force_download('upload/'.$nama_file,NULL);
+        $nama_file=$this->Dokumen_model->getById_dokumen($id);
+        force_download('upload/'.$nama_file->kategori.'/'.$nama_file->kegiatan.'/'.$nama_file->file,NULL);
     }
 
     public function edit_dokumen($id = null)

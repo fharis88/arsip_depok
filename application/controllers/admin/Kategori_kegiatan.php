@@ -33,7 +33,16 @@ class Kategori_kegiatan extends CI_Controller {
 
         $kategori = $this->kategori_model;
         $kategori->save_kategori();
-        $this->session->set_flashdata('success','Kategori Berhasil Disimpan');
+        $post = $this->input->post();
+        $directory = 'upload/'.$post["Kategori_kategori"];
+        if (!is_dir($directory)) {
+            mkdir($directory , 0777);
+            $this->session->set_flashdata('success','Kategori Berhasil Disimpan, Folder berhasil dibuat');
+        } else {
+             $this->session->set_flashdata('success','Kategori Berhasil Disimpan, Folder tidak dibuat');
+        }
+
+        
 
         $data["kategori"] = $this->kategori_model->getAll_kategori();
         $data["kegiatan"] = $this->kegiatan_model->getAll_kegiatan();
@@ -58,7 +67,15 @@ class Kategori_kegiatan extends CI_Controller {
 
         $kegiatan = $this->kegiatan_model;
         $kegiatan->save_kegiatan();
-        $this->session->set_flashdata('success','Kegiatan Berhasil Disimpan');
+        $post = $this->input->post();
+
+        $directory = 'upload/'.$post["Kategori_kegiatan"].'/'.$post["Kegiatan_kegiatan"];
+        if (!is_dir($directory)) {
+            mkdir($directory , 0777);
+            $this->session->set_flashdata('success','Kategori Berhasil Disimpan, Folder berhasil dibuat');
+        } else {
+             $this->session->set_flashdata('success','Kategori Berhasil Disimpan, Folder tidak dibuat');
+        }
 
         $data["kategori"] = $this->kategori_model->getAll_kategori();
         $data["kegiatan"] = $this->kegiatan_model->getAll_kegiatan();

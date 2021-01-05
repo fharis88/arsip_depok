@@ -27,7 +27,7 @@ class Dokumen_model extends CI_Model
     
    
     
-        public function save_dokumen($pecah,$size)
+        public function save_dokumen($file_name,$size)
     {
         $post = $this->input->post();
         $this->judul = $post["Judul_data"];
@@ -41,7 +41,7 @@ class Dokumen_model extends CI_Model
 
 
         
-        $this->file = $post["Kategori_data"].'-'.$post["Kegiatan_data"].'-'.date('Y-m-d').'-'.$post["Judul_data"].$pecah;
+        $this->file = $file_name;
         
 
         return $this->db->insert($this->_table, $this);
